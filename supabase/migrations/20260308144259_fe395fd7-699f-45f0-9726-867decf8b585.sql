@@ -1,0 +1,2 @@
+DELETE FROM payments WHERE booking_request_id IN ('bd861006-dba8-496e-ac21-d67748c21fd9', '36ac645c-3b10-42fd-b47b-9ec794ce4581');
+DELETE FROM booking_requests WHERE id IN ('bd861006-dba8-496e-ac21-d67748c21fd9', '36ac645c-3b10-42fd-b47b-9ec794ce4581');

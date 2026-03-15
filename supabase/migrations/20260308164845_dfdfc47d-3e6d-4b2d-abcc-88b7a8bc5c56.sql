@@ -1,0 +1,2 @@
+ALTER TABLE public.archive_items DROP CONSTRAINT archive_items_category_check;
+ALTER TABLE public.archive_items ADD CONSTRAINT archive_items_category_check CHECK (category = ANY (ARRAY['History'::text, 'Culture'::text, 'Cuisine'::text, 'Traditions'::text, 'Hidden Gems'::text, 'Folk Tales'::text, 'Literature'::text]));

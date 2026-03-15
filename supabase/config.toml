@@ -1,0 +1,13 @@
+project_id = "bdtceduwhlbsmhupjlmj"
+
+[functions.send-review-prompt]
+verify_jwt = false
+
+[functions.cron-review-prompts]
+verify_jwt = false
+
+[functions.ai-trip-planner]
+verify_jwt = false
+
+[functions.packing-reminder]
+verify_jwt = false

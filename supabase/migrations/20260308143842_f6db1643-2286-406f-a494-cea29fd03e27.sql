@@ -1,0 +1,1 @@
+UPDATE stays SET host_id = '38056f09-23c0-4b14-aa6a-4df3b111f5b8' WHERE id = '0a49a5ce-95dd-4c94-b939-631b59e76a25'

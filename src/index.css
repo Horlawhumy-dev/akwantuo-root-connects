@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kente-inspired palette — warmer, richer */
+    --kente-gold: 41 76% 48%;
+    --kente-gold-foreground: 0 0% 100%;
+    --kente-maroon: 0 59% 30%;
+    --kente-maroon-foreground: 0 0% 100%;
+    --kente-green: 111 37% 25%;
+    --kente-green-foreground: 0 0% 100%;
+    --sand: 33 52% 80%;
+    --sand-foreground: 0 0% 10%;
+    --charcoal: 0 0% 10%;
+    --charcoal-foreground: 0 0% 95%;
+
+    /* Core design tokens */
+    --background: 36 40% 97%;
+    --foreground: 20 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 12%;
+
+    --primary: 41 76% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 59% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 36 20% 92%;
+    --muted-foreground: 20 8% 46%;
+
+    --accent: 111 37% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 16% 86%;
+    --input: 36 16% 86%;
+    --ring: 41 76% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 41 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 41 76% 48%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10% / 0.88), hsl(0 59% 30% / 0.55), hsl(41 76% 48% / 0.25));
+    --gradient-kente: linear-gradient(90deg, hsl(41 76% 48%), hsl(0 59% 30%), hsl(111 37% 25%), hsl(41 76% 48%));
+    --gradient-warm: linear-gradient(180deg, hsl(36 40% 97%), hsl(33 52% 80% / 0.3));
+    --gradient-gold-soft: linear-gradient(135deg, hsl(41 76% 48% / 0.08), hsl(41 76% 48% / 0.02));
+
+    /* Shadows */
+    --shadow-kente: 0 4px 24px -4px hsl(41 76% 48% / 0.2);
+    --shadow-elevated: 0 8px 32px -8px hsl(0 0% 10% / 0.12);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 10% / 0.06), 0 1px 2px -1px hsl(0 0% 10% / 0.06);
+    --shadow-card-hover: 0 10px 30px -6px hsl(41 76% 48% / 0.18), 0 4px 12px -2px hsl(0 0% 10% / 0.06);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 36 30% 92%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 36 30% 92%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 36 30% 92%;
+
+    --primary: 41 76% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 59% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 36 14% 60%;
+
+    --accent: 111 37% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 41 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  /* Adinkra watermark background */
+  .adinkra-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' fill='none'%3E%3Cpath d='M30 10 C30 10 20 20 20 30 C20 35.5 24.5 40 30 40 C35.5 40 40 35.5 40 30 C40 20 30 10 30 10 Z M30 25 C30 25 27 28 27 30 C27 31.6 28.4 33 30 33 C31.6 33 33 31.6 33 30 C33 28 30 25 30 25 Z' fill='%23C9952A' opacity='0.035'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .adinkra-bg-dark {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' fill='none'%3E%3Cpath d='M30 10 C30 10 20 20 20 30 C20 35.5 24.5 40 30 40 C35.5 40 40 35.5 40 30 C40 20 30 10 30 10 Z M30 25 C30 25 27 28 27 30 C27 31.6 28.4 33 30 33 C31.6 33 33 31.6 33 30 C33 28 30 25 30 25 Z' fill='%23C9952A' opacity='0.07'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  /* Kente border accent */
+  .kente-border {
+    border-image: linear-gradient(90deg, hsl(41 76% 48%), hsl(0 59% 30%), hsl(111 37% 25%), hsl(41 76% 48%)) 1;
+  }
+
+  .kente-border-bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, hsl(41 76% 48%), hsl(0 59% 30%), hsl(111 37% 25%), hsl(41 76% 48%)) 1;
+  }
+
+  /* Gradient text */
+  .text-gradient-kente {
+    background: linear-gradient(135deg, hsl(41 76% 48%), hsl(0 59% 30%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated kente strip */
+  .kente-strip {
+    height: 3px;
+    background: linear-gradient(90deg, hsl(41 76% 48%), hsl(0 59% 30%), hsl(111 37% 25%), hsl(41 76% 48%));
+    background-size: 200% 100%;
+    animation: kente-flow 4s linear infinite;
+  }
+
+  @keyframes kente-flow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+
+  /* Glass card effect */
+  .glass-card {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--kente-gold) / 0.35);
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--kente-gold) / 0.55);
+  }
+
+  /* Leaflet map fixes */
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+  }
+
+  /* Focus visible ring */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Smooth card hover */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+  .card-hover:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+
+  /* Africa map popup */
+  .africa-map-popup .leaflet-popup-content-wrapper {
+    background: hsl(var(--charcoal));
+    color: hsl(var(--charcoal-foreground));
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid hsl(var(--border));
+  }
+  .africa-map-popup .leaflet-popup-tip {
+    background: hsl(var(--charcoal));
+  }
+}
